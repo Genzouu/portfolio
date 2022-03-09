@@ -1,0 +1,111 @@
+.navbar {
+   width: 100%;
+   height: 10rem;
+   position: absolute;
+   top: 0;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   transition: 400ms ease-out;
+   z-index: 100;
+
+   .menu-icon {
+      margin: 0 3.6rem;
+      min-width: 2.8rem;
+      min-height: 2.8rem;
+      color: white;
+      cursor: pointer;
+      transition: rotate 400ms ease-out;
+   }
+
+   .open-menu-icon {
+      rotate: 90deg;
+   }
+
+   .menu-items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: center;
+      border-radius: 0.8rem;
+      padding: 1rem;
+      margin-left: 2rem;
+      box-shadow: 0 0 1rem 0.2rem rgb(26, 26, 26);
+      gap: 1rem;
+
+      .menu-item {
+         color: white;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         padding: 1rem;
+         flex-direction: row;
+         gap: 1rem;
+         border-radius: 0.8rem;
+         cursor: pointer;
+         transition: background-color 225ms ease-out, color 225ms ease-out;
+
+         &:hover {
+            background-color: var(--accent-colour);
+            color: black;
+         }
+      }
+   }
+
+   .close-menu {
+      display: flex;
+      opacity: 0%;
+      animation: close-menu 500ms ease-out;
+
+      @keyframes close-menu {
+         0% {
+            width: 100%;
+            opacity: 100%;
+         }
+         50% {
+            opacity: 5%;
+            color: rgba(0, 0, 0, 0);
+         }
+         100% {
+            justify-self: flex-start;
+            width: 35%;
+            opacity: 0%;
+            color: rgba(0, 0, 0, 0);
+         }
+      }
+   }
+
+   .close-menu-final {
+      display: none;
+   }
+
+   .open-menu {
+      display: flex;
+      animation: open-menu 500ms ease-out;
+
+      @keyframes open-menu {
+         0% {
+            justify-self: flex-start;
+            width: 35%;
+            opacity: 0%;
+            color: rgba(0, 0, 0, 0);
+         }
+         25% {
+            opacity: 25%;
+            color: rgba(0, 0, 0, 0);
+         }
+      }
+   }
+
+   .text {
+      font-size: 2.2rem;
+      font-weight: 600;
+   }
+}
+
+.open-navbar {
+   height: 10rem;
+   background-color: rgba(29, 29, 29, 0.75);
+}
