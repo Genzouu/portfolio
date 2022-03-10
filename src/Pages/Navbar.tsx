@@ -6,10 +6,12 @@ import { AiFillPhone } from "react-icons/ai";
 import { useState } from "react";
 
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-   const [initMenuState, setInitMenuState] = useState(true);
-   const [menuState, setMenuState] = useState(true);
+   const [initMenuState, setInitMenuState] = useState(false);
+   const [menuState, setMenuState] = useState(false);
+   const [selectedPage, setSelectedPage] = useState<"home" | "about" | "projects" | "contact">("home");
 
    const manageMenu = (open: boolean) => {
       if (open) {
@@ -27,27 +29,35 @@ export default function Navbar() {
             className={`menu-icon icon ${initMenuState ? "open-menu-icon" : ""}`}
             onClick={() => manageMenu(!initMenuState)}
          />
-         <div
-            className={`menu-items ${initMenuState ? "open-menu" : "close-menu"} ${
-               menuState ? "" : "close-menu-final"
-            }`}
-         >
-            <div className="home menu-item">
-               {/* <TiHome className="icon" /> */}
-               <p className="text">Home</p>
-            </div>
-            <div className="about menu-item">
-               {/* <BsPersonFill className="icon" /> */}
-               <p className="text">About</p>
-            </div>
-            <div className="project menu-item">
-               {/* <CgWebsite className="icon" /> */}
-               <p className="text">Projects</p>
-            </div>
-            <div className="contact menu-item">
-               {/* <AiFillPhone className="icon" /> */}
-               <p className="text">Contact</p>
-            </div>
+         <div className={`menu ${initMenuState ? "open-menu" : "close-menu"} ${menuState ? "" : "close-menu-final"}`}>
+            <Link
+               className={`menu-item ${selectedPage === "home" ? "menu-item-selected" : ""}`}
+               to="/"
+               onClick={() => setSelectedPage("home")}
+            >
+               Home
+            </Link>
+            <Link
+               className={`menu-item ${selectedPage === "about" ? "menu-item-selected" : ""}`}
+               to="/about"
+               onClick={() => setSelectedPage("about")}
+            >
+               About
+            </Link>
+            <Link
+               className={`menu-item ${selectedPage === "projects" ? "menu-item-selected" : ""}`}
+               to="/projects"
+               onClick={() => setSelectedPage("projects")}
+            >
+               Projects
+            </Link>
+            <Link
+               className={`menu-item ${selectedPage === "contact" ? "menu-item-selected" : ""}`}
+               to="/contact"
+               onClick={() => setSelectedPage("contact")}
+            >
+               Contact
+            </Link>
          </div>
       </div>
    );
