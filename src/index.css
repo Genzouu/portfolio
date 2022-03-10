@@ -1,5 +1,6 @@
 :root {
-   --accent-colour: rgb(231, 150, 0);
+   --accent-colour: #ffa500;
+   --main-background-colour: #222222;
 }
 
 html {

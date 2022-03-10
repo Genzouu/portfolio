@@ -1,8 +1,4 @@
 import { FaBars } from "react-icons/fa";
-import { TiHome } from "react-icons/ti";
-import { BsPersonFill } from "react-icons/bs";
-import { CgWebsite } from "react-icons/cg";
-import { AiFillPhone } from "react-icons/ai";
 import { useState } from "react";
 
 import "./Navbar.scss";
@@ -19,7 +15,7 @@ export default function Navbar() {
          setMenuState(true);
       } else {
          setInitMenuState(false);
-         setTimeout(() => setMenuState(false), 400);
+         setTimeout(() => setMenuState(false), 450);
       }
    };
 

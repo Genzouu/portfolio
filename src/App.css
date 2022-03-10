@@ -3,5 +3,5 @@
    height: 100vh;
    display: flex;
    flex-direction: column;
-   background-color: #222222;
+   background-color: var(--main-background-colour);
 }
