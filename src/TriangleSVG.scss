@@ -1,8 +1,8 @@
 .triangle-svg {
    width: 100%;
-   height: auto;
+   max-height: 84rem;
    position: absolute;
-   top: 10rem;
+   top: 12rem;
    animation: triangle 50s linear infinite;
 
    @keyframes triangle {
